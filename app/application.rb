@@ -8,7 +8,6 @@ class Application
 
    if req.path=="/items/"
      item_name = req.path.split("/items/").last
-     binding.pry
      if @@item.include?(item_name)
        resp.write "#{item_name.price}"
      else
@@ -19,6 +18,7 @@ class Application
    else
      resp.write "Route not found"
      resp.status = 404
+     binding.pry
    end
 
    resp.finish
