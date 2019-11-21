@@ -9,12 +9,14 @@ class Application
 
    if req.path=="/items/#{item_name}"
      binding.pry
+     @@items.each do |item|
+       if item.name == item_name
+         resp.write item.price
 
-     if @@items.include?(item_name)
-       resp.write "#{item_name.price}"
-     else
-       resp.write "Item not found"
-       resp.status = 400
+       else
+         resp.write "Item not found"
+         resp.status = 400
+       end
 
      end
    else
