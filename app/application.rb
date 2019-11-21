@@ -6,9 +6,9 @@ class Application
 
    item_name = req.params["q"]
 
-   if req.path=="/items/q"
-     if @@item.include?(q)
-       resp.write "#{q.price}"
+   if req.path=="/items"
+     if @@item.include?(item_name)
+       resp.write "#{item_name.price}"
      else
        resp.write "Item not found"
        resp.status = 400
