@@ -7,9 +7,11 @@ class Application
   #  item_name = req.params["q"]
 
    if req.path=="/items/#{item}"
-     if @@
+     if @@items.include?(item)
+       resp.write "#{item.price}"
+    #  else
 
-     resp.write "#{item.price}"
+     end
    else
      resp.write "Route not found"
      resp.status = 404
