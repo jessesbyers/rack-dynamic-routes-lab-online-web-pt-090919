@@ -8,6 +8,7 @@ class Application
 
    if req.path=="/items/"
      item_name = req.path.split("/items/").last
+     binding.pry
      if item_name
        resp.write "#{item_name.price}"
      else
