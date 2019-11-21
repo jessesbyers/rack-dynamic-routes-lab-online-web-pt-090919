@@ -2,27 +2,26 @@ require 'pry'
 
 class Application
 
- def call(env)
-   resp = Rack::Response.new
-   req = Rack::Request.new(env)
+  def call(env)
+    resp = Rack::Response.new
+    req = Rack::Request.new(env)
 
-     if req.path.match(/items/)
+    if req.path.match(/items/)
        item_name = req.path.split("/items/").last
-      #  if @@items.find{|i| i.name == item_name}
-         item = @@items.find{|i| i.name == item_name}
-         if item 
+       item = @@items.find{|i| i.name == item_name}
+       if item
          resp.write "#{item.price}"
          resp.status = 200
+       else
+         resp.write "Item not found"
+         resp.status = 400
+       end
+
      else
-       resp.write "Item not found"
-       resp.status = 400
+       resp.write "Route not found"
+       resp.status = 404
      end
 
-   else
-     resp.write "Route not found"
-     resp.status = 404
+     resp.finish
    end
-
-   resp.finish
- end
 end
