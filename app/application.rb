@@ -4,11 +4,11 @@ class Application
    resp = Rack::Response.new
    req = Rack::Request.new(env)
 
-  #  item_name = req.params["q"]
+   item_name = req.params["q"]
 
-   if req.path=="/items"
-     if @@item.include?(item)
-       resp.write "#{item.price}"
+   if req.path=="/items/q"
+     if @@item.include?(q)
+       resp.write "#{q.price}"
      else
        resp.write "Item not found"
        resp.status = 400
