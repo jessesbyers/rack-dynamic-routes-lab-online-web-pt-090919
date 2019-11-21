@@ -11,11 +11,10 @@ class Application
        item = @@items.find{|i| i.name == item_name}
        resp.write "#{item.price}"
        resp.status = 200
-     elsif req.path=="/items/"
-
-       resp.write "Item not found"
-       resp.status = 400
-     end
+    #  else
+    #    resp.write "Item not found"
+    #    resp.status = 400
+    #  end
 
    else
      resp.write "Route not found"
