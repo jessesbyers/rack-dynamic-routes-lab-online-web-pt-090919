@@ -9,7 +9,7 @@ class Application
 
    if req.path=="/items/#{item_name}"
      @@items.each do |item|
-       if item.name == item_name
+       if item.name.equal? item_name
          resp.write "#{item.price}"
          resp.status = 200
 
