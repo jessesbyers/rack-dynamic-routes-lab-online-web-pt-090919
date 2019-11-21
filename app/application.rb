@@ -6,7 +6,7 @@ class Application
    resp = Rack::Response.new
    req = Rack::Request.new(env)
 
-   if req.path=="/items/"
+   if req.path=="/items/#{item_name}"
      item_name = req.path.split("/items/").last
      binding.pry
      if @@item.include?(item_name)
