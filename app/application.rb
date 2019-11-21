@@ -6,7 +6,7 @@ class Application
 
   #  item_name = req.params["q"]
 
-   if req.path=="/items/"
+   if req.path=="/items"
      if @@item.include?(item)
        resp.write "#{item.price}"
     #  else
