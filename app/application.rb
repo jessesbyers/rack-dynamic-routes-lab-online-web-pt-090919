@@ -8,7 +8,7 @@ class Application
    item_name = req.path.split("/items/").last
 
    if req.path=="/items/#{item_name}"
-
+binding.pry
      @@items.each do |item|
        if item_name
          resp.write "#{item.price}"
