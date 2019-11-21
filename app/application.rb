@@ -5,9 +5,9 @@ class Application
  def call(env)
    resp = Rack::Response.new
    req = Rack::Request.new(env)
+   item_name = req.path.split("/items/").last
 
    if req.path=="/items/#{item_name}"
-     item_name = req.path.split("/items/").last
      binding.pry
      if @@item.include?(item_name)
        resp.write "#{item_name.price}"
