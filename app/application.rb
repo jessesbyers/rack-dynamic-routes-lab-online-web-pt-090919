@@ -8,7 +8,6 @@ class Application
 
    if req.path=="/items/"
      item_name = req.path.split("/items/").last
-     binding.pry
     #  if Item.all.include?(item_name)
     #    resp.write "#{item_name.price}"
     #  else
