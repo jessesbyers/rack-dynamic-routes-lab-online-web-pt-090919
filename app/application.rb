@@ -6,7 +6,7 @@ class Application
 
   #  item_name = req.params["q"]
 
-   if req.path=="/items/#{item_name}"
+   if req.path=="/items/"
      resp.write "You requested the songs"
    else
      resp.write "Route not found"
