@@ -9,6 +9,6 @@ class Item
   end
 
   def self.all
-    @@all 
+    @@item
   end
 end
